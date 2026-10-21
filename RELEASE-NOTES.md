@@ -1,21 +1,26 @@
-# Forever Bag Mover 1.2.5 beta
+First public beta for WoW Forever 1.60.1, interface 16001.
 
-First public GitHub prerelease for friends to test and contribute.
+Move the combined backpack or individual bags, save positions per character, and choose how Escape and the reagent bag behave.
 
-The runtime matches the previously shared 1.2.5. This release adds portable tests, a verified ZIP builder, contribution instructions and automated checks.
+## Changes
 
-Bag positions cannot be restored during combat when the client restricts the frame. With Escape closing disabled, you may hear the close sound and may need to close bags before Escape opens the game menu.
+The add-on code matches the previously shared 1.2.5. This GitHub release adds an installable download and a public repository for bug reports and contributions.
 
-Install `ForeverBagMover-1.2.5.zip`. Keep your WTF folder to retain settings.
-The checksum is in SHA256SUMS.txt. Please report reproducible problems through GitHub issues.
+## Install
 
-Checked in WoW Forever on 21 October 2026. The options window opens, both bags open and close, and the combined backpack drag handle moves the backpack and reagent bag together. Combat behavior and persistence across a full game restart still need wider testing.
+Download `ForeverBagMover-1.2.5.zip` under Assets. Close WoW, extract it and copy `ForeverBagMover` into your client's `Interface/AddOns` folder. Restart WoW and enable it at character selection.
 
+Type `/bagmove options` to open settings. Keep your WTF folder when updating to retain saved positions. `SHA256SUMS.txt` contains the download checksum.
 
-![Promotional artwork](https://raw.githubusercontent.com/DeanieBobeanie/ForeverBagMover/main/media/banner.png)
+## Known issues
 
-AI-generated promotional artwork.
+- Combat restrictions can prevent bag positions from being restored.
+- With Escape closing disabled, you may hear the close sound and need to close bags before Escape opens the game menu.
 
-![Actual in-game screenshot](https://raw.githubusercontent.com/DeanieBobeanie/ForeverBagMover/main/media/in-game.jpg)
+## Checks
 
-The options window, movable combined backpack and reagent bag.
+Automated checks passed. The options window, bag opening and closing, and dragging the combined backpack with its reagent bag were checked in WoW Forever on 21 October 2026. Combat behavior and saved positions across a full game restart still need testing.
+
+![Bag Mover options and movable bags in WoW Forever](https://raw.githubusercontent.com/DeanieBobeanie/ForeverBagMover/v1.2.5/media/in-game.jpg)
+
+[Usage guide](https://github.com/DeanieBobeanie/ForeverBagMover#quick-start) · [Report a bug](https://github.com/DeanieBobeanie/ForeverBagMover/issues) · [Contribute](https://github.com/DeanieBobeanie/ForeverBagMover/blob/main/CONTRIBUTING.md)
