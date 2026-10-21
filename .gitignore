@@ -1,0 +1,12 @@
+node_modules/
+dist/
+work/
+__pycache__/
+*.pyc
+*.zip
+*.log
+.env
+.env.*
+WTF/
+SavedVariables/
+local-settings.json

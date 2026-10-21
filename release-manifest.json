@@ -1,0 +1,11 @@
+{
+  "addon": "ForeverBagMover",
+  "files": [
+    "ForeverBagMover/CHANGELOG.txt",
+    "ForeverBagMover/ForeverBagMover.lua",
+    "ForeverBagMover/ForeverBagMover.toc",
+    "ForeverBagMover/LICENSE.txt",
+    "ForeverBagMover/Media/Movebag.tga",
+    "ForeverBagMover/README.txt"
+  ]
+}

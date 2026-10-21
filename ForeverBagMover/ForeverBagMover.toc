@@ -1,0 +1,9 @@
+## Interface: 16001
+## Title: Forever Bag Mover
+## Notes: Move the default bags and remember their positions per character.
+## Author: DonManDee; Deanie Bobeanie
+## Version: 1.2.5
+## IconTexture: Interface\AddOns\ForeverBagMover\Media\Movebag
+## X-License: MIT
+## SavedVariablesPerCharacter: ForeverBagMoverDB
+ForeverBagMover.lua

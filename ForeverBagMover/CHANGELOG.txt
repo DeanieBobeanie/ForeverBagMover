@@ -1,0 +1,139 @@
+Forever Bag Mover changelog
+
+1.2.5 | 2026-10-18
+
+Replaced the cog with the original Movebag backpack-and-arrows artwork.
+The 24 by 24 square button stays beside X and opens the same settings.
+The artwork is bundled as a 64 by 64 TGA texture and also appears in the
+add-on list. Mouse handling and bag behaviour are unchanged.
+
+1.2.4 | 2026-10-18
+
+Made the backpack options control a 24 by 24 square gear beside X and
+removed the Options text. It keeps the existing mouse-press handling,
+settings menu and reagent-bag behaviour.
+
+1.2.3 | 2026-10-18
+
+Close the reagent bag when the main backpack closes, including the X
+button and combined-backpack toggle. This applies even when automatic
+reagent opening is disabled. It respects both Escape choices and avoids
+closing the reagent bag during a bag-mode switch or quick reopen.
+
+An independently opened reagent bag stays open. Restricted frames remain
+untouched in combat. Automated checks pass; in-game confirmation is pending.
+
+1.2.2 | 2026-10-18
+
+Moved the Options button into an independent frame above the bag header.
+It follows the bag's position and scale, and hides when the bag closes.
+The menu now toggles on left mouse press, with no second toggle on release.
+This addresses the report that hover worked but clicking did not open it.
+
+Automated checks cover press-only and complete clicks, right-click ignoring,
+scale matching, hiding on close, and the earlier bag behaviour. The user
+still needs to confirm clicking works in the affected client.
+
+1.2.1 | 2026-10-18
+
+Replaced the client-supplied gear texture with a cog drawn by the add-on
+and a visible Options label beside the open backpack's X button. Refresh
+the button's display level with the bag so it stays above the bag artwork.
+The button is available with locked handles, outside combat.
+
+This follows a report that the gear was not visible while /bagmove options
+still opened the menu. Automated checks pass. Visibility in the affected
+client still needs confirmation. Bag behaviour and saved settings carry over.
+
+1.2.0 | 2026-10-18
+
+Added a gear beside the backpack close button in combined and separate
+bag modes. Its menu can lock or unlock the handles, choose whether Escape
+closes bags, and control opening the reagent bag with the backpack.
+The same menu opens with /bagmove options. Settings save per character.
+The gear remains visible with locked handles and hides during combat.
+
+Escape continues to keep bags open by default. Enable Escape closes bags
+to use normal closing. Reagent opening defaults to on. It respects manual
+reagent closing and skips bags already open, absent reagent bags, and
+restricted frames. Existing saved positions and handle settings carry over.
+
+Automated checks pass. The new controls and reagent opening need an
+in-game check. Version 1.1.6 remains the previously confirmed release.
+
+1.1.6 | 2026-10-18
+
+Replaced Escape call-stack matching with a keyboard observer that always
+passes input through to WoW. It records the open bags and restores them
+on the next update when the client permits it. Other keys cancel pending
+restoration. The add-on no longer hooks ToggleGameMenu.
+
+Added a position check after opening bags and every tenth of a second in
+combat. This covers late layout updates that bypass the global layout
+hook, including bags without handles. Frames already in place do not move.
+Restricted frames remain untouched. Added /bagmove status for live tests.
+
+Released after the user confirmed that the installed 1.1.6 version works
+in game on 18 October 2026. The release uses the same Lua code. Automated
+checks also pass.
+
+1.1.5 | 2026-10-18
+
+Changed Escape to keep open bags in place. Bag keys and X buttons still
+close them. Removed the extra Escape-close list entries from 1.1.3.
+After Blizzard finishes handling Escape, a secure post-hook restores only
+the bag frames hidden during that dispatch, where frame permissions allow.
+The add-on does not replace native close functions or register a custom
+Escape handler. Saved positions and the combat layout fix carry over.
+
+WoW may consume Escape while bags are open. Close the bags with the bag
+key before opening the game menu. A bag-close sound may still play.
+Automated checks pass. Live input and security checks remain pending.
+
+1.1.4 | 2026-10-18
+
+Fixed saved bags jumping to the default corner during combat layout updates.
+The add-on now restores saved positions when the client confirms that a
+frame's layout can be changed. Restricted frames remain untouched until
+combat ends. Handles stay hidden and manual dragging stays disabled in combat.
+
+If combat interrupts a drag, save the position from the moving handle even
+when Blizzard has already reset the bag's anchor. Covers top and bottom
+handles and changed UI scales. The native Escape integration from 1.1.3 remains.
+
+Automated checks pass. Verification in the affected game client is pending.
+
+1.1.3 | 2026-10-18
+
+Removed the custom Escape callback added in 1.1.1 after a report that WoW
+blocked ForeverBagMover from a Blizzard-only action. The add-on now lists
+bag frame names in UISpecialFrames and leaves closing them to Blizzard's
+normal Escape path. It no longer registers a game-menu Escape callback or
+calls CloseAllBags. Saved positions, handle placement, and credits carry over.
+
+Restart WoW after updating. This clears the old registered callback from
+the running session. Verification in the affected game client is pending.
+
+1.1.2 | 2026-10-18
+
+Prepared the public distribution package. Added author credits, an icon
+for the add-on list, an MIT license, troubleshooting instructions, and
+this changelog. Bag movement and Escape behaviour are unchanged from 1.1.1.
+
+1.1.1 | 2026-10-18
+
+Added an Escape handler for combined and separate bags. Closing a bag
+also hides its drag handle. Closing during a drag saves the position.
+Included a fallback for clients that use the older special-frame list.
+
+1.1.0 | 2026-10-18
+
+Added top and bottom drag-handle placement. Right-click a handle to
+switch sides, or use /bagmove anchor top and /bagmove anchor bottom.
+Bottom handles allow bags to reach the top of the screen.
+
+1.0.0 | 2026-10-18
+
+Initial version. Added movable default bags, saved positions per character,
+combined and separate bag support, and commands to lock handles and reset
+positions. Position changes pause during combat.
